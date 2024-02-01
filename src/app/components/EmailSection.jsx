@@ -9,33 +9,33 @@ import Image from "next/image";
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
+  //   const data = {
+  //     email: e.target.email.value,
+  //     subject: e.target.subject.value,
+  //     message: e.target.message.value,
+  //   };
 
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+  //   const JSONdata = JSON.stringify(data);
+  //   const endpoint = "/api/send";
 
-    const options = {
-      method: "POST",
-      header: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
+  //   const options = {
+  //     method: "POST",
+  //     header: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSONdata,
+  //   };
 
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
+  //   const response = await fetch(endpoint, options);
+  //   const resData = await response.json();
 
-    if (response.status === 200) {
-      setEmailSubmitted(true);
-    }
-  };
+  //   if (response.status === 200) {
+  //     setEmailSubmitted(true);
+  //   }
+  // };
 
   return (
     <section
@@ -111,12 +111,12 @@ const EmailSection = () => {
               placeholder="Let's talk about how we can work together!"
             ></textarea>
           </div>
-          <button
+          {/* <button
             type="submit"
             className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
           >
             Send Message
-          </button>
+          </button> */}
           {emailSubmitted && (
             <p className="text-green-500 text-sm mt-2">Email Submitted</p>
           )}
